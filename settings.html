@@ -1,0 +1,106 @@
+<div class="kys-settings">
+  <style>
+    .kys-settings .menu_button {
+      white-space: nowrap;
+      width: auto;
+      min-width: 0;
+      flex: 0 0 auto;
+      padding: 3px 10px;
+      line-height: 1.2;
+    }
+    .kys-settings .mlm-btnrow {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .kys-settings .mlm-inline {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-top: 6px;
+    }
+  </style>
+
+  <div class="inline-drawer">
+    <div class="inline-drawer-toggle inline-drawer-header">
+      <b>空一水</b> <small id="mlm-version" style="opacity:.55; font-weight:400;"></small>
+      <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+    </div>
+    <div class="inline-drawer-content" style="font-size:12px;">
+
+      <label class="checkbox_label"><input type="checkbox" id="mlm-enabled"><span>启用插件</span></label>
+
+      <div class="mlm-block" style="border-top:1px solid rgba(255,255,255,.12); padding-top:8px;">
+        <b>当前角色的存档</b>
+        <small id="mlm-bbb-status" style="display:block; margin-top:2px; opacity:.75; font-size:11px;"></small>
+        <div id="mlm-chat-list" class="mlm-list"><em>加载中...</em></div>
+      </div>
+
+      <div class="mlm-block" style="border-top:1px solid rgba(255,255,255,.12); padding-top:8px;">
+        <b>小剧场控制</b>
+        <label class="checkbox_label" style="display:flex; gap:6px; align-items:center; margin-top:6px;">
+          <span style="font-size:12px; white-space:nowrap;">额外角色</span>
+          <input id="mlm-extra-roles" class="text_pole" type="text" style="flex:1;" placeholder="逗号分隔">
+        </label>
+        <label class="checkbox_label" style="display:flex; gap:6px; align-items:center; margin-top:6px;">
+          <span style="font-size:12px; white-space:nowrap;">user 认知</span>
+          <select id="mlm-user-identity" class="text_pole" style="flex:1;">
+            <option value="same">同一人</option>
+            <option value="diff">不同人</option>
+            <option value="auto">自动</option>
+          </select>
+        </label>
+        <label class="checkbox_label" style="display:flex; gap:6px; align-items:center; margin-top:6px;">
+          <span style="font-size:12px; white-space:nowrap;">单次最多</span>
+          <input id="mlm-max-realms" class="text_pole" type="number" min="1" style="width:70px;">
+          <span style="font-size:12px;">个位面</span>
+        </label>
+      </div>
+
+      <div class="mlm-block" style="border-top:1px solid rgba(255,255,255,.12); padding-top:8px;">
+        <b>采样</b>
+        <label class="checkbox_label" style="display:flex; gap:6px; align-items:center; margin-top:6px;">
+          <span style="font-size:12px; white-space:nowrap;">原文每档取</span>
+          <input id="mlm-max-messages" class="text_pole" type="number" min="1" style="width:70px;">
+          <span style="font-size:12px;">条</span>
+        </label>
+        <label class="checkbox_label" style="display:flex; gap:6px; align-items:center; margin-top:6px;">
+          <span style="font-size:12px; white-space:nowrap;">原文上限</span>
+          <input id="mlm-max-chars" class="text_pole" type="number" min="200" style="width:80px;">
+          <span style="font-size:12px;">字符</span>
+        </label>
+        <label class="checkbox_label" style="display:flex; gap:6px; align-items:center; margin-top:6px;">
+          <span style="font-size:12px; white-space:nowrap;">注入深度</span>
+          <input id="mlm-depth" class="text_pole" type="number" min="0" style="width:70px;">
+        </label>
+      </div>
+
+      <div class="mlm-block" style="border-top:1px solid rgba(255,255,255,.12); padding-top:8px;">
+        <div class="mlm-btnrow">
+          <button id="mlm-import-btn" class="menu_button" style="font-size:12px;">重新注入</button>
+          <button id="mlm-preview-btn" class="menu_button" style="font-size:12px;">预览</button>
+        </div>
+        <small id="mlm-status" style="display:block; margin-top:4px; opacity:.8; font-size:11px;"></small>
+
+        <details id="mlm-preview-box" style="margin-top:8px;">
+          <summary style="font-size:11px; opacity:.7; cursor:pointer;">注入内容</summary>
+          <small id="mlm-preview-count" style="display:block; margin-top:4px; opacity:.75; font-size:11px;"></small>
+          <textarea id="mlm-preview" readonly style="width:100%; height:110px; margin-top:4px; font-size:11px;"></textarea>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary style="font-size:11px; opacity:.7; cursor:pointer;">记忆包导入导出</summary>
+          <div class="mlm-btnrow">
+            <button id="mlm-export-pack" class="menu_button" style="font-size:11px;">导出</button>
+            <button id="mlm-import-pack" class="menu_button" style="font-size:11px;">导入</button>
+          </div>
+          <small id="mlm-capture-status" style="display:block; margin-top:4px; opacity:.8; font-size:11px;"></small>
+          <textarea id="mlm-pack" style="width:100%; height:60px; margin-top:4px; font-size:11px;"></textarea>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</div>
